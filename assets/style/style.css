@@ -21,25 +21,17 @@ body {
 }
 
 .image-height {
-  min-height: 80dvh;
+  min-height: 70dvh;
 }
 
-.hover-display {
+.hover-display p {
   opacity: 0;
 }
 
-.hover-display:hover {
+.hover-display h5 {
   opacity: 1;
 }
 
-.opacity-override {
-  opacity: 1;
-}
-
-.opacity-1 {
-  opacity: 1;
-}
-
-.opacity-override>.opacity-1 {
+.hover-display:hover p {
   opacity: 1;
 }
