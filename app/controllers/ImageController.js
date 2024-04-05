@@ -21,9 +21,9 @@ export class ImageController {
 
     }
     drawBackground() {
-        console.log('drawing background')
+        // console.log('drawing background')
         const bgImg = AppState.image
-        console.log('bg image', bgImg)
+        // console.log('bg image', bgImg)
         document.body.style.backgroundImage = `url(${bgImg.lgImgUrl})`
     }
 }
