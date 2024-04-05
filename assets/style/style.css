@@ -6,6 +6,11 @@
   object-fit: cover;
 }
 
+body {
+  background-size: cover;
+  background-position: center;
+}
+
 .profile-picture.profile-picture-sm {
   height: 64px;
 }
@@ -13,4 +18,8 @@
 .bg-clear {
   background-color: rgba(70, 70, 70, 0.50);
   backdrop-filter: blur(10px);
+}
+
+.image-height {
+  min-height: 80dvh;
 }
