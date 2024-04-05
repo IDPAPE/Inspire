@@ -23,3 +23,23 @@ body {
 .image-height {
   min-height: 80dvh;
 }
+
+.hover-display {
+  opacity: 0;
+}
+
+.hover-display:hover {
+  opacity: 1;
+}
+
+.opacity-override {
+  opacity: 1;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.opacity-override>.opacity-1 {
+  opacity: 1;
+}
