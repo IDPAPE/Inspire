@@ -8,9 +8,44 @@
             </h5>
         </div>
     </div> -->
-    <div class="row d-flex ">
-        <div class="col d-flex image-height text-center h-100 w-100 justify-content-end align-items-end"></div>
+    <div class="row d-flex">
+        <div class="col-8 d-flex image-height text-center h-100 w-100 justify-content-end align-items-end"></div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-end">
+                <div class="col-4 bg-white">
+                    <div class="row">
+                        <h1>To-do List</h1>
+                    </div>
+                    <div id="todo-list" class="container-fluid">
+                        <!-- <div class="row text-center">
+                            <div class="col-1">
+                                <input type="checkbox" checked onclick="">
+                            </div>
+                            <div class="col-9">
+                                <p>body text goes in here</p>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-danger"><i class="mdi mdi-delete-circle"></i></button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div>
+                        <form onsubmit="app.TodoController.newTodo()">
+                            <div class="input-group mb-3">
+                                <input type="text" name="description" class="form-control" placeholder="New To-Do"
+                                    aria-describedby="new-todo-btn">
+                                <button class="btn btn-outline-secondary" type="submit"
+                                    id="new-todo-btn">Button</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="quote-area" class="row text-light text-center hover-display">
         <!-- <h5>"Quote will go here"</h5>
         <p>-author name</p> -->

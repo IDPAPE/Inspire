@@ -21,7 +21,8 @@ body {
 }
 
 .image-height {
-  min-height: 70dvh;
+  min-height: 50dvh;
+  max-height: 70dvh;
 }
 
 .hover-display p {
