@@ -21,7 +21,7 @@ body {
 }
 
 .image-height {
-  min-height: 50dvh;
+  min-height: 10dvh;
   max-height: 70dvh;
 }
 

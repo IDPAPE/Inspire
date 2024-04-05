@@ -21,6 +21,15 @@ export class Todo {
         <button class="btn btn-danger" onclick="app.TodoController.deleteTodo('${this.id}')"><i class="mdi mdi-delete-circle"></i></button>
     </div>
 </div>
+<hr/>
 `
+    }
+
+    get TodoTitleTemplate() {
+        return `
+        <h1>To-Do List (${})
+        <hr />
+    </h1>
+        `
     }
 }

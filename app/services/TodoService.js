@@ -4,6 +4,18 @@ import { api } from "./AxiosService.js"
 
 class TodoService {
 
+
+    updateUncompleteCount() {
+        let uncompletedCount = 0
+        AppState.todos.forEach(todo => {
+            if (todo.completed == false) {
+                uncompletedCount++
+            }
+        });
+        console.log('uncompleted', uncompletedCount)
+        AppState.uncompletedCount = uncompletedCount
+    }
+
     async getTodos() {
         const response = await api.get('api/todos')
         const importedTodos = response.data.map(todo => new Todo(todo))
