@@ -26,6 +26,16 @@ class TodoService {
         AppState.todos.splice(indexRemoved, 1)
         console.log('delete response', response.data)
     }
+
+    async toggleComplete(id) {
+        // debugger
+        const todoToToggle = AppState.todos.find(todo => todo.id == id)
+        todoToToggle.completed = !todoToToggle.completed
+        console.log('did it set as complete?', todoToToggle)
+        const response = await api.put(`api/todos/${id}`, todoToToggle)
+        console.log('put response:', response.data)
+        AppState.emit('todos')
+    }
 }
 
 export const todoService = new TodoService()

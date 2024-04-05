@@ -12,7 +12,7 @@ export class Todo {
         return `
 <div class="row text-center align-middle">
     <div class="col-1 align-middle">
-        <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="">
+        <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.TodoController.toggleComplete('${this.id}')">
     </div>
     <div class="col-9 align-middle">
         <p>${this.description}</p>
@@ -21,7 +21,6 @@ export class Todo {
         <button class="btn btn-danger" onclick="app.TodoController.deleteTodo('${this.id}')"><i class="mdi mdi-delete-circle"></i></button>
     </div>
 </div>
-
 `
     }
 }

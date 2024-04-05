@@ -11,6 +11,12 @@ export class TodoController {
         AppState.on('todos', this.drawTodos)
     }
 
+    drawTodos() {
+        let todoList = ''
+        AppState.todos.forEach(todo => todoList += todo.TodoListTemplate)
+        setHTML('todo-list', todoList)
+    }
+
     async getTodos() {
         try {
             todoService.getTodos()
@@ -47,9 +53,12 @@ export class TodoController {
         }
     }
 
-    drawTodos() {
-        let todoList = ''
-        AppState.todos.forEach(todo => todoList += todo.TodoListTemplate)
-        setHTML('todo-list', todoList)
+    async toggleComplete(id) {
+        try {
+            await todoService.toggleComplete(id)
+        } catch (error) {
+            Pop.toast('could not complete todo', 'error')
+            console.error(error)
+        }
     }
 }
