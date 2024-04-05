@@ -18,6 +18,14 @@ class TodoService {
         const response = await api.post('api/todos', AppState.newTodo)
         console.log('new todo response', response)
     }
+
+    async deleteTodo(id) {
+        const indexRemoved = AppState.todos.findIndex(todo => todo.id == id)
+        console.log(indexRemoved)
+        const response = await api.delete(`api/todos/${id}`)
+        AppState.todos.splice(indexRemoved, 1)
+        console.log('delete response', response.data)
+    }
 }
 
 export const todoService = new TodoService()

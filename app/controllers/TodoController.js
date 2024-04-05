@@ -32,8 +32,19 @@ export class TodoController {
         }
     }
 
-    async deleteTodo(description) {
-        AppState.todos.findIndex
+    async deleteTodo(id) {
+        try {
+            const confirm = await Pop.confirm('Are you sure you want to delete the to-do?')
+            if (confirm == false) {
+                return
+            }
+            else {
+                todoService.deleteTodo(id)
+            }
+        } catch (error) {
+            Pop.toast('could not delete todo', 'error')
+            console.error(error)
+        }
     }
 
     drawTodos() {
