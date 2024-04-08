@@ -27,7 +27,7 @@ export class Todo {
 
     get TodoTitleTemplate() {
         return `
-        <h1>To-Do List (${})
+        <h1>To-Do List (0)
         <hr />
     </h1>
         `
