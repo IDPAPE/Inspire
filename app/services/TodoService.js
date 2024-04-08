@@ -25,9 +25,10 @@ class TodoService {
     async newTodo(formData) {
         AppState.newTodo = new Todo(formData)
         console.log(AppState.newTodo)
-        AppState.todos.push(AppState.newTodo)
         const response = await api.post('api/todos', AppState.newTodo)
+        AppState.todos.push(AppState.newTodo)
         console.log('new todo response', response)
+        this.getTodos()
     }
 
     async deleteTodo(id) {
