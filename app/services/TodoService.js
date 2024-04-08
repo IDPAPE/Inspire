@@ -5,15 +5,14 @@ import { api } from "./AxiosService.js"
 class TodoService {
 
 
-    updateUncompleteCount() {
-        let uncompletedCount = 0
+    uncompleteCount() {
+        let uncompleteCount = 0
         AppState.todos.forEach(todo => {
             if (todo.completed == false) {
-                uncompletedCount++
+                uncompleteCount++
             }
         });
-        console.log('uncompleted', uncompletedCount)
-        AppState.uncompletedCount = uncompletedCount
+        AppState.uncompleteCount = uncompleteCount
     }
 
     async getTodos() {

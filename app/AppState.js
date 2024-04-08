@@ -26,7 +26,7 @@ class ObservableAppState extends EventEmitter {
   /**@type {import('./models/Account.js').Account | null} */
   account = null
 
-  uncompletedCount = null
+  uncompleteCount = 0
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

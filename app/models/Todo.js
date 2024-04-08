@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 export class Todo {
@@ -27,7 +28,7 @@ export class Todo {
 
     get TodoTitleTemplate() {
         return `
-        <h1>To-Do List (0)
+        <h1>To-Do List (${AppState.uncompleteCount})
         <hr />
     </h1>
         `

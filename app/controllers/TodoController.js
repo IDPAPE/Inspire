@@ -9,7 +9,8 @@ export class TodoController {
         console.log('todo controller loaded');
         AppState.on('account', this.getTodos)
         AppState.on('todos', this.drawTodos)
-        AppState.on('todos', this.drawTodosTitle)
+        AppState.on('todos', this.uncompleteCount)
+        // this.uncompleteCount()
     }
 
     drawTodos() {
@@ -18,15 +19,18 @@ export class TodoController {
         setHTML('todo-list', todoList)
     }
 
-    updateUncompleteCount() {
-        console.log('updating uncomplete count')
-        todoService.updateUncompleteCount()
-    }
-
     drawTodosTitle() {
         console.log('updating todo list title')
-        let listTitleHTML = `<h1>To-do List (${AppState.uncompletedCount})<hr /></h1>`
+        let listTitleHTML = `<h1>To-do List (${AppState.uncompleteCount})<hr /></h1>`
         setHTML('list-title', listTitleHTML)
+    }
+
+    uncompleteCount() {
+        todoService.uncompleteCount()
+        let listHTML = `<h1>To-Do List (${AppState.uncompleteCount})
+        <hr />
+    </h1>`
+        setHTML('list-title', listHTML)
     }
 
     async getTodos() {
@@ -68,7 +72,7 @@ export class TodoController {
     async toggleComplete(id) {
         try {
             await todoService.toggleComplete(id)
-            this.updateUncompleteCount()
+            this.uncompleteCount()
         } catch (error) {
             Pop.toast('could not complete todo', 'error')
             console.error(error)
