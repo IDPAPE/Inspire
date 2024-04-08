@@ -1,3 +1,4 @@
+import { Clock } from './models/Clock.js'
 import { Image } from './models/Image.js'
 import { Quote } from './models/Quote.js'
 import { Todo } from './models/Todo.js'
@@ -6,6 +7,9 @@ import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
+
+  /**@type {Clock} */
+  clock = null
 
   /**@type {Image} */
   image = null
